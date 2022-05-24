@@ -1,6 +1,7 @@
 import messages from '../data/messages.js'
 import messageModel  from '../models/messageModel.js'
 import asyncHandler from 'express-async-handler'
+import userModel from '../models/userModel.js'
 
 
  export const addMessage=asyncHandler(async(req,res)=>{
@@ -43,7 +44,26 @@ export const contactmessage=asyncHandler(async(req,res)=>{
         
         const messages=await messageModel.find({$or: [{ from: senderEmail,to:recieverEmail }, { from:recieverEmail,to: senderEmail }]}).sort({"_id":-1})
         
-        res.send(messages)
+        const messagesWithNames=[]
+
+
+        for (const message of messages) {
+            const userEmail= await userModel.find({email:message.from})
+            const obj={
+                name:userEmail[0].name,
+                from:message.from,
+                to:message.to,
+                description:message.description,
+                _id:message._id,
+                createdAt:message.createdAt
+            
+            }
+            messagesWithNames.push(obj)
+          }
+
+
+
+        res.send({data:messagesWithNames})
       
 
     } catch (error) {

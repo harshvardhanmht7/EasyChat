@@ -9,7 +9,7 @@ export const contactMessageReducer=(state={},action)=>{
         case CONTACT_MESSAGE_SUCCESS:
             return{
                 loading:false,
-                contactMessaes:action.payload
+                messageInfo:action.payload.data
             }
 
         case CONTACT_MESSAGE_FAIL:
@@ -18,7 +18,7 @@ export const contactMessageReducer=(state={},action)=>{
                 error:action.payload
             }
         default:
-            state
+           return state
     }
 
 }

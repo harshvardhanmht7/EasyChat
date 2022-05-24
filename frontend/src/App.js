@@ -13,11 +13,11 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-     
+      <Route path='/messages/contactmessage/:ReceiverEmail' element={<ContactMessageScreen/>} exact/>
       <Route path='/login' element={<LoginScreen/>}/>
       <Route path='/adduser' element={<RegisterScreen/>}/>
-      <Route path='messages/contactmessage/:email' element={<ContactMessageScreen/>}/>
-
+      
+                 
       <Route  path='/' element={<Homescreen/>} exact />
       </Routes>
       <Footer/>

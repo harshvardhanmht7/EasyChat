@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <Navbar style={{backgroundColor: '#C4DDFF' }} expand="lg">
   <Container >
-    <Navbar.Brand className="fs-2 fw-bold fst-italic" style={{color:"##00092C"}} to="/">EasyMail</Navbar.Brand>
+    <Navbar.Brand className="fs-2 fw-bold fst-italic" style={{color:"##00092C"}} to="/">EasyChat</Navbar.Brand>
     
     {userInfo&&
     <Navbar.Collapse id="basic-navbar-nav  ">
