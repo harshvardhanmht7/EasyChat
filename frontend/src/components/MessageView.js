@@ -3,11 +3,11 @@ import { Col, Row, Card } from "react-bootstrap";
 
 const MessageView = ({ user, from, description, to, name, createdAt }) => {
   return (
-    <div style={{ display: "block" ,width:'100%'}}>
+    <div style={{ display: "block" ,width:'70%' ,textAlign:"center"}}>
       <Col>
         {from === user ? (
-          <Row>
-            <div style={{ marginLeft: "55%", fontSize: "1.5rem" ,width:'100%' }}>
+          <Row style={{ marginLeft: "60%", fontSize: "1.5rem" ,marginTop:'1rem',marginBottom:"1rem" }}>
+            <div >
               <Card
                 style={{
                   width: "30rem",
@@ -28,8 +28,8 @@ const MessageView = ({ user, from, description, to, name, createdAt }) => {
             </div>
           </Row>
         ) : (
-          <Row>
-            <div style={{ marginLeft: "20%", fontSize: "1.5rem" ,width:'100%' }}>
+          <Row style={{ marginLeft: "20%", fontSize: "1.5rem" , marginTop:'1rem',marginBottom:"1rem" }}>
+            <div >
               <Card
                 style={{
                   width: "30rem",

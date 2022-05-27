@@ -48,6 +48,7 @@ export const contactmessage=asyncHandler(async(req,res)=>{
 
 
         for (const message of messages) {
+           
             const userEmail= await userModel.find({email:message.from})
             const obj={
                 name:userEmail[0].name,
@@ -55,7 +56,7 @@ export const contactmessage=asyncHandler(async(req,res)=>{
                 to:message.to,
                 description:message.description,
                 _id:message._id,
-                createdAt:message.createdAt
+                createdAt:message.createdAt.toString().split("GMT")[0]
             
             }
             messagesWithNames.push(obj)

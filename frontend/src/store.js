@@ -4,7 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 
 import {contactsListReducer,loginReducer,userRegisterReducer} from './reducers/usersReducer'
-import {contactMessageReducer} from './reducers/messageReducer'
+import {contactMessageReducer,AddMessageReducer} from './reducers/messageReducer'
 
 
 
@@ -12,7 +12,8 @@ const rootReducer = combineReducers({
         contactsList:contactsListReducer,
         login:loginReducer,
         userRegister : userRegisterReducer,
-        contactMessage:contactMessageReducer
+        contactMessage:contactMessageReducer,
+        addMessage     : AddMessageReducer
     
     })
 
